@@ -411,17 +411,27 @@ $value in $colors {
 .home-img{
     position: relative;
 
-    &::before{
-        content: "";
-        position: absolute;
-        width: 360px;
-        height: 330px;
-        background-color: rgba($primary, 0.1);
-        border-radius: 30% 70% 59% 41% / 30% 38% 62% 70%;
-        z-index: -1;
-        top: 90px;
-        right: 15px;
-    }
+    // &::before{
+    //     content: "";
+    //     position: absolute;
+    //     width: 360px;
+    //     height: 330px;
+    //     background-color: rgba($primary, 0.1);
+    //     border-radius: 30% 70% 59% 41% / 30% 38% 62% 70%;
+    //     z-index: -1;
+    //     top: 90px;
+    //     right: 15px;
+    // }
+}
+
+.home-lottie {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    z-index: -1;
+    top: 30px;
+    right: 15px;
 }
 
 

@@ -12,9 +12,15 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
+import { PortofolioComponent } from './portofolio/portofolio.component';
+import { LottieModule } from 'ngx-lottie';
 
+/** lottie web */
+export function playerFactory() {
+  return import('lottie-web');
+}
 
-
+/** For ngx translater */
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
 }
@@ -22,7 +28,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PortofolioComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +48,10 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     MatIconModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
+    LottieModule.forRoot({
+      player: playerFactory,
+      useCache: true,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

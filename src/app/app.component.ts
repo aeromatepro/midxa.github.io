@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { faCoffee, faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { TranslateService } from '@ngx-translate/core';
 import { Storage } from '@ionic/storage';
 
+import { AnimationItem } from 'lottie-web';
+import { AnimationOptions } from 'ngx-lottie';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +16,11 @@ export class AppComponent {
   faGlobe = faGlobe;
   userSetting = {}
 
+  options: AnimationOptions = {
+    path: '../assets/lottie/17252-colorful-confetti.json',
+  };
+ 
+  animationItem: AnimationItem;
 
   constructor(
     public translate: TranslateService,
@@ -28,12 +35,19 @@ export class AppComponent {
       translate.addLangs(['en', 'id']);
       translate.use(userData.lng)
     }
+
+    console.log(this.options);
+    
+  }
+
+  animationCreated(animationItem: AnimationItem): void {
+    this.animationItem = animationItem;
   }
 
 
   public changeLanguage(language: string) {
     console.log('start');
-    this.userSetting.lng = language;
+    this.userSetting["lng"] = language;
     localStorage.setItem('userSetting', JSON.stringify(this.userSetting))
     this.translate.use(language)
   }

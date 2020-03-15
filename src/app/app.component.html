@@ -6,27 +6,34 @@
       <h2>Midxa</h2>
     </a>
 
-
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
       aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <i class="mdi mdi-menu"></i>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav ml-auto navbar-center" id="mySidenav">
-        <li class="nav-item active">
+        <li class="nav-item">
           <a href="#home" class="nav-link">{{'Home' | translate}}</a>
         </li>
         <li class="nav-item">
           <a href="#services" class="nav-link">{{'Services' | translate}}</a>
         </li>
         <li class="nav-item">
-          <a href="#features" class="nav-link">{{'Features' | translate}}</a>
+          <a href="#features" class="nav-link">{{'Portofolio' | translate}}</a>
         </li>
         <li class="nav-item">
-          <a href="#clients" class="nav-link">Clients</a>
+          <a href="#clients" class="nav-link">{{'Clients'| translate}}</a>
         </li>
         <li class="nav-item">
-          <a href="#pricing" class="nav-link">{{'Pricing' | translate}}</a>
+          <a href="#pricing" class="nav-link">{{'Company' | translate}}</a>
+          <ul>
+            <li>
+              <a href="#clients" class="nav-link">{{'Our Teams'| translate}}</a>
+            </li>
+            <li>
+              <a href="#clients" class="nav-link">{{'About Us'| translate}}</a>
+            </li>
+          </ul>
         </li>
         <li class="nav-item">
           <button mat-icon-button class="nav-link">
@@ -34,12 +41,12 @@
           </button>
           <ul>
             <li (click)="changeLanguage('en')">
-              <button mat-icon-button >
+              <button mat-icon-button>
                 <img src="../assets/images/uk.svg" alt=""> English
               </button>
             </li>
             <li (click)="changeLanguage('id')">
-              <button mat-icon-button #langSelect >
+              <button mat-icon-button #langSelect>
                 <img src="../assets//images/id.svg" alt=""> Bahasa
               </button>
             </li>
@@ -59,17 +66,20 @@
       <div class="col-lg-6">
         <div class="hero-wrapper mb-4">
           <p class="font-16 text-uppercase">{{'Discover Midxa' | translate}}</p>
-          <h1 class="hero-title mb-4">Make your Site Amazing & Unique with <span class="text-primary">Midxa</span></h1>
+          <h1 class="hero-title mb-4">{{'Make your creative solutions with' | translate}} <span
+              class="text-primary">Midxa</span></h1>
           <div class="mt-4">
-            <a href="#" class="btn btn-primary mt-2 mr-2">Get Started</a>
+            <a href="#" class="btn btn-primary mt-2 mr-2">{{'Get Started' | translate}}</a>
           </div>
         </div>
 
       </div>
 
+
       <div class="col-lg-6 col-sm-8">
         <div class="home-img mt-5 mt-lg-0">
-          <img src="../assets/images/home-img.png" alt="" class="img-fluid mx-auto d-block">
+          <ng-lottie class="home-lottie" [options]="options" (animationCreated)="animationCreated($event)"></ng-lottie>
+          <img src="../assets/images/home-man.png" alt="" class="img-fluid mx-auto d-block">
         </div>
       </div>
     </div>
@@ -99,8 +109,10 @@
               <i data-feather="grid" class="icon-dual-primary"></i>
             </span>
           </div>
-          <h5 class="font-18">Bootstrap UI based</h5>
-          <p class="mb-0">To an English person, it will seem like English as skeptical.</p>
+          <h5 class="font-18">{{'Trusted' | translate}}</h5>
+          <p class="mb-0">
+            {{'Trusted to helping companies or organizations in all fields in improving systems, management and human resources' | translate}}
+          </p>
         </div>
       </div>
       <div class="col-xl-4 col-sm-6">
@@ -465,55 +477,6 @@
 </section>
 <!-- Testimonial end -->
 
-<!-- Counter start -->
-<section class="section bg-primary">
-  <div class="container">
-    <div class="row justify-content-center mb-5">
-      <div class="col-lg-7">
-        <div class="text-center text-white-50">
-          <h4 class="text-white">Best Solutions for your Business</h4>
-          <p>To achieve this, it would be necessary to have uniform grammar, pronunciation and more common that of the
-            individual languages.</p>
-        </div>
-      </div>
-    </div>
-    <div class="row" id="counter">
-      <div class="col-xl-3 col-sm-6">
-        <div class="text-center mt-4">
-          <i data-feather="bookmark" class="icon-dual-success icons-lg"></i>
-          <h2 class="counter-value text-white mt-4" data-count="2581">10</h2>
-          <p class="font-16 text-white-50">Projects</p>
-        </div>
-      </div>
-
-      <div class="col-xl-3 col-sm-6">
-        <div class="text-center mt-4">
-          <i data-feather="user-plus" class="icon-dual-success icons-lg"></i>
-          <h2 class="counter-value text-white mt-4" data-count="800">2</h2>
-          <p class="font-16 text-white-50">No. of Clients</p>
-        </div>
-      </div>
-
-      <div class="col-xl-3 col-sm-6">
-        <div class="text-center mt-4">
-          <i data-feather="coffee" class="icon-dual-success icons-lg"></i>
-          <h2 class="counter-value text-white mt-4" data-count="128">608</h2>
-          <p class="font-16 text-white-50">Cups of coffee</p>
-        </div>
-      </div>
-      <div class="col-xl-3 col-sm-6">
-        <div class="text-center mt-4">
-          <i data-feather="award" class="icon-dual-success icons-lg"></i>
-          <h2 class="counter-value text-white mt-4" data-count="47">6</h2>
-          <p class="font-16 text-white-50">Awards</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- end container -->
-</section>
-<!-- Counter end -->
-
 <!-- Pricing start -->
 <section class="section bg-light" id="pricing">
   <div class="container">
@@ -527,37 +490,25 @@
       </div>
     </div>
     <!-- end row -->
-
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="text-center mb-4">
-          <ul class="nav nav-pills pricing-nav-tabs mb-4">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Monthly</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Yearly</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
     <div class="row">
       <div class="col-lg-4">
         <div class="pricing-plan card text-center">
           <div class="card-body p-4">
-            <h5 class="mt-2 mb-5">Economy</h5>
-
-            <h1 class="mb-5"><sup><small>$</small></sup>19/ <span class="font-16">Mo</span></h1>
-
+            <h5 class="mt-2 mb-5">Company Profile</h5>
+            <span class="font-16">Start from</span>
+            <h1 class="mb-5"><sup><small>Rp</small></sup>4.999.999</h1>
             <div>
               <a href="#" class="btn btn-primary">Join now</a>
             </div>
             <div class="plan-features mt-5">
-              <p>Bandwidth : <span class="text-success">1GB</span></p>
-              <p>Onlinespace : <span class="text-success">50MB</span></p>
-              <p>Support : <span class="text-success">No</span></p>
+              <p>Free Hosting</p>
+              <p>Free Domain</p>
+              <p>Custom Design</p>
+              <p>Free Logo</p>
+              <p>Free Maintenance 3 Month</p>
+              <p>Responsive Layout</p>
+              <p>Modern Design</p>
+              <p>Admin Panel</p>
             </div>
           </div>
         </div>
@@ -565,17 +516,22 @@
       <div class="col-lg-4">
         <div class="pricing-plan card text-center">
           <div class="card-body p-4">
-            <h5 class="mt-2 mb-5">Premium</h5>
-
-            <h1 class="mb-5"><sup><small>$</small></sup>29/ <span class="font-16">Mo</span></h1>
-
+            <h5 class="mt-2 mb-5">E-Commerce</h5>
+            <span class="font-16">Start from</span>
+            <h1 class="mb-5"><sup><small>Rp</small></sup>9.999.999</h1>
             <div>
-              <a href="#" class="btn btn-primary">Join now</a>
+              <a href="#" class="btn btn-primary">{{'Start Now' | translate}}</a>
             </div>
             <div class="plan-features mt-5">
-              <p>Bandwidth : <span class="text-success">2GB</span></p>
-              <p>Onlinespace : <span class="text-success">1GB</span></p>
-              <p>Support : <span class="text-success">No</span></p>
+              <p>Free Hosting</p>
+              <p>Free Domain</p>
+              <p>Custom Design</p>
+              <p>Free Logo</p>
+              <p>Free Maintenance 3 Month</p>
+              <p>Responsive Layout</p>
+              <p>Modern Design</p>
+              <p>Cart</p>
+              <p>Admin Panel</p>
             </div>
           </div>
         </div>
@@ -651,8 +607,7 @@
       <div class="col-lg-4 col-sm-6">
         <div>
           <h5 class="mb-4 footer-list-title">About the Midxa</h5>
-          <p>The Midxa is a sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem
-            eaque </p>
+          <p>Midxa is a trusted IT Consultant that always puts quality on every product we do so that it will always maintain our integrity for all customers of all our users</p>
         </div>
       </div>
       <div class="col-lg-2 offset-lg-1 col-sm-6">
@@ -720,11 +675,11 @@
       <div class="col-lg-12">
         <div class="float-sm-left">
           <a href="#">
-            <img src="../assets/images/logo-light.png" alt="" height="20">
+            <h2>MIDXA</h2>
           </a>
         </div>
         <div class="float-sm-right mt-4 mt-sm-0">
-          <p class="copyright-desc text-white mb-0">2019 © Midxa. Created by Themesdesign</p>
+          <p class="copyright-desc text-white mb-0">Created with ♥ by Midxa © 2020.</p>
         </div>
       </div>
     </div>

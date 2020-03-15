@@ -818,7 +818,7 @@ p {
   position: relative;
 }
 
-.home-img::before {
+/* .home-img::before {
   content: "";
   position: absolute;
   width: 360px;
@@ -828,7 +828,7 @@ p {
   z-index: -1;
   top: 90px;
   right: 15px;
-}
+} */
 
 /*--- Hero 2 ---*/
 .hero-section-2 {
