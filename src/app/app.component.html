@@ -6,6 +6,9 @@
       <!-- <img src="../assets/images/logo-dark.png" alt="" class="logo-dark" height="20" /> -->
       <h2>Midxa</h2>
     </a>
+    <select #langSelect (change)="changeLanguage(langSelect.value)">
+      <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
+    </select>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
       aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,10 +17,10 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav ml-auto navbar-center" id="mySidenav">
         <li class="nav-item active">
-          <a href="#home" class="nav-link">Home</a>
+          <a href="#home" class="nav-link">{{'Home' | translate}}</a>
         </li>
         <li class="nav-item">
-          <a href="#services" class="nav-link">Services</a>
+          <a href="#services" class="nav-link">{{'Services' | translate}}</a>
         </li>
         <li class="nav-item">
           <a href="#features" class="nav-link">Features</a>
