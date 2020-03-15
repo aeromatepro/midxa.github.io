@@ -11,6 +11,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { IonicStorageModule } from '@ionic/storage';
+
 
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -27,6 +29,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
+    IonicStorageModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -37,7 +40,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     MatButtonModule,
     MatIconModule,
     FontAwesomeModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

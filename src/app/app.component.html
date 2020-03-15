@@ -2,13 +2,10 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark">
   <div class="container">
     <!-- LOGO -->
-    <a class="logo text-uppercase" href="index-1.html">
-      <!-- <img src="../assets/images/logo-dark.png" alt="" class="logo-dark" height="20" /> -->
+    <a class="logo text-uppercase" href="#">
       <h2>Midxa</h2>
     </a>
-    <select #langSelect (change)="changeLanguage(langSelect.value)">
-      <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
-    </select>
+
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
       aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,16 +20,30 @@
           <a href="#services" class="nav-link">{{'Services' | translate}}</a>
         </li>
         <li class="nav-item">
-          <a href="#features" class="nav-link">Features</a>
+          <a href="#features" class="nav-link">{{'Features' | translate}}</a>
         </li>
         <li class="nav-item">
           <a href="#clients" class="nav-link">Clients</a>
         </li>
         <li class="nav-item">
-          <a href="#pricing" class="nav-link">Plans</a>
+          <a href="#pricing" class="nav-link">{{'Pricing' | translate}}</a>
         </li>
         <li class="nav-item">
-          <button mat-icon-button><fa-icon [icon]="faGlobe"></fa-icon> Bahasa</button>
+          <button mat-icon-button class="nav-link">
+            <fa-icon [icon]="faGlobe"></fa-icon> {{'Language' | translate}}
+          </button>
+          <ul>
+            <li (click)="changeLanguage('en')">
+              <button mat-icon-button >
+                <img src="../assets/images/uk.svg" alt=""> English
+              </button>
+            </li>
+            <li (click)="changeLanguage('id')">
+              <button mat-icon-button #langSelect >
+                <img src="../assets//images/id.svg" alt=""> Bahasa
+              </button>
+            </li>
+          </ul>
         </li>
       </ul>
     </div>

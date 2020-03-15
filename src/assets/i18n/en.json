@@ -1,5 +1,5 @@
 {
-    "TITLE": "Hello Angular with ngx-translate!",
-    "TRAINING": "Our next Training: ",
-    "SELECT": "Change language"
+    "Home": "Home",
+    "Language": "Language",
+    "Pricing": "Pricing"
 }

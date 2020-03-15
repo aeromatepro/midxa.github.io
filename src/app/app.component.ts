@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { faCoffee, faGlobe } from '@fortawesome/free-solid-svg-icons';
-import {TranslateService} from '@ngx-translate/core';
-
+import { TranslateService } from '@ngx-translate/core';
+import { Storage } from '@ionic/storage';
 
 
 @Component({
@@ -12,20 +12,33 @@ import {TranslateService} from '@ngx-translate/core';
 export class AppComponent {
   title = 'midxa-landing';
   faGlobe = faGlobe;
-  
-  constructor(public translate: TranslateService) {
-    translate.addLangs(['en', 'id']);
-    translate.setDefaultLang('en');
+  userSetting = {}
 
-    const browserLang = translate.getBrowserLang();
-    translate.use(browserLang.match(/en|id/) ? browserLang : 'en');
+
+  constructor(
+    public translate: TranslateService,
+    public storage: Storage) {
+    let userData = JSON.parse(localStorage.getItem('userSetting'));
+    if (userData == null) {
+      localStorage.setItem('userSetting', JSON.stringify(this.userSetting))
+      translate.addLangs(['en', 'id']);
+      const browserLang = translate.getBrowserLang();
+      translate.use(browserLang.match(/en|id/) ? browserLang : 'en');
+    } else {
+      translate.addLangs(['en', 'id']);
+      translate.use(userData.lng)
+    }
   }
 
-  public changeLanguage(language: string){
-   this.translate.use(language)
+
+  public changeLanguage(language: string) {
+    console.log('start');
+    this.userSetting.lng = language;
+    localStorage.setItem('userSetting', JSON.stringify(this.userSetting))
+    this.translate.use(language)
   }
 
   public get currentLanguage(): string {
-   return this.translate.currentLang;
+    return this.translate.currentLang;
   }
 }

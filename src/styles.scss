@@ -244,6 +244,7 @@ $value in $colors {
     .navbar-nav{
         .nav-item{
             .nav-link{
+                font-size: 16px;
                 line-height: 26px;
                 color: rgba($dark, 0.8);
                 transition: all 0.4s;
@@ -253,12 +254,47 @@ $value in $colors {
                 &:hover, &:active{
                     color: $primary
                 }
+
+                &:hover > ul {
+                    display: inherit;
+                    position: absolute;
+                    /* top: 60px; */
+                    float: none;
+                    list-style-type: none;
+                    margin-left: -20px;
+                    color: rgba(52, 58, 64, 0.8);
+                }
             }
             &.active {
                 .nav-link{
                     color: $primary;
                 }
             }
+
+            ul {
+                display: none;
+                position: absolute; 
+
+
+                li:hover {
+                    color: $primary
+                }
+                
+                img {
+                    width: 20px;
+                }
+            }
+        }
+
+        .nav-item:hover > ul {
+            visibility: visible;
+            display: inherit;
+            position: absolute;
+            /* top: 60px; */
+            float: none;
+            list-style-type: none;
+            margin-left: -20px;
+            color: rgba(52, 58, 64, 0.8);
         }
     }
 
